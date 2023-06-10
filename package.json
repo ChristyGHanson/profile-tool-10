@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "bulma": "^0.9.4",
+    "bulma-start": "^0.0.5",
     "inquirer": "^8.2.4",
     "jest": "^29.5.0"
   }
