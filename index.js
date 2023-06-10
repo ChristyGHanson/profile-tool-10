@@ -1,57 +1,193 @@
 //This downloads Inquirer.
+// when app starts add a manager
+//then follow with what you want the user to do next. 
 const inquirer = require('inquirer');
 const fs = require('fs');
 const utilsFile = require('./utils/utils-file.js')
 
-// This is an array of questions for user input.
-// This function will write content to a file.
-function writeToFile(fileName, data) {
-    // for(const question of data ){
-    fs.writeFile(fileName, utilsFile(data), (err) => {
-        if (err) {
-            console.log('Sorry. Error!!! Figure out the problem', err);
-            return
-        }
-        console.log('SUCCESS.')
-    }
-    )
-};
+let team = [];
 
-function initApplication() {
-
-    // These prompts will appear in the command line application. The user will be able to respond to these prompts.
-    // Pressing the 'ENTER' key after answering each question will produce the next question in the sequence.
+// employee ID, email address, and office number
+function addManager() {
     inquirer.prompt([
         {
+            // generic name field.
             type: 'input',
-            message: 'Name of Team Manager: ',
-            name: 'managername'
+            message: 'Enter your name: ',
+            name: 'name'
         },
         {
+            //
             type: 'input',
-            message: 'Type a description for the project. Describe how it works.: ',
-            name: 'description'
+            message: 'Enter your email address: ',
+            name: 'email'
         },
-        {
-            type: 'input',
-            message: 'Describe how to install this program: ',
-            name: 'installation'
-        },
-        {
-            type: 'list',
-            message: 'For licenses, please type one of the following (Use the UP and DOWN arrow keys. Press Enter to select the license.): ',
-            name: 'license',
-            choices: ['MIT', 'Apache', 'Mozilla', 'GNU', 'Boost', 'ISC']
-        },
-        {
-            type: 'input',
-            message: 'Explain which license the application is covered under.: ',
-            name: 'licensenotice',
-        }
-    ])
-        .then((data) =>
-            writeToFile('index.html', data))
-}
 
-// Calling initApplication function here initializes the app.
-initApplication();
+        {
+            // 
+            type: 'input',
+            message: 'Enter your ID: ',
+            name: 'id'
+        },
+        {
+            //
+            type: 'input',
+            message: 'Enter your office number: ',
+            name: 'office'
+        },
+
+        {
+            //
+            type: 'input',
+            message: 'Enter your office number: ',
+            name: 'office'
+        },
+        {
+            //engineer or an intern or to finish building my team
+            type: 'list',
+            message: 'select an option from the menu: ',
+            name: 'menu',
+            choices: ['Add engineer', 'Add intern', 'Finish building the team']
+        },
+
+    ])
+
+        .then((data) => {
+            console.log(data)
+            selectOption(data);
+        })
+};
+
+// get everything to line up.
+function addEngineer() {
+    console.log('Add engineer')
+    inquirer.prompt([
+        {
+            // generic name field.
+            type: 'input',
+            message: 'Enter engineer name: ',
+            name: 'name'
+        },
+        {
+            //
+            type: 'input',
+            message: 'Enter their email address: ',
+            name: 'email'
+        },
+
+        {
+            // 
+            type: 'input',
+            message: 'Enter their ID: ',
+            name: 'id'
+        },
+        {
+            //
+            type: 'input',
+            message: 'Enter their GitHub username: ',
+            name: 'office'
+        },
+
+        {
+            //engineer or an intern or to finish building my team
+            type: 'list',
+            message: 'select an option from the menu: ',
+            name: 'menu',
+            choices: ['Add engineer', 'Add intern', 'Finish building the team']
+        },
+
+    ])
+
+        .then((data) => {
+            console.log(data)
+
+            selectOption(data);
+        })
+};
+
+function addIntern() {
+    console.log('Add intern')
+    inquirer.prompt([
+        {
+            // generic name field.
+            type: 'input',
+            message: 'Enter your name: ',
+            name: 'name'
+        },
+        {
+            //
+            type: 'input',
+            message: 'Enter your email address: ',
+            name: 'email'
+        },
+
+        {
+            // 
+            type: 'input',
+            message: 'Enter your ID: ',
+            name: 'id'
+        },
+        {
+            //
+            type: 'input',
+            message: 'Enter your school: ',
+            name: 'office'
+        },
+
+        {
+            //engineer or an intern or to finish building my team
+            type: 'list',
+            message: 'select an option from the menu: ',
+            name: 'menu',
+            choices: ['Add engineer', 'Add intern', 'Finish building the team']
+        },
+
+    ])
+
+        .then((data) => {
+            console.log(data)
+            selectOption(data);
+        })
+};
+
+// data sends the data to this function. this function evaluates data.
+
+function selectOption(data) {
+    team.push(data)
+    //put person in the array and view data.
+
+    if (data.menu == 'Add engineer') {
+        addEngineer();
+    } else if (data.menu == 'Add intern') {
+        addIntern();
+    } else if (data.menu == 'Finish building the team') {
+        finishTeam();
+    }
+};
+
+// generate dynamic html inside this function.
+//build a for loop, etc. whatever i want. It needs to output some html to put into the string on 189.
+// div, h3 person's name, biographical info. loop gneerates a specific string. 
+// adding person's info to the string. have a long string ready. 
+//Figure out how it will be set up. we have the data. focus on the front end. reference Module10.
+// make a spot for each team member. 
+
+function finishTeam() {
+    console.log('Finish building the team')
+    console.log(team)
+    // Create a 'for' loop. Write some HTML blocks inside a template literal. Using backticks. Inside it, access person's name. Access that information inside array. ${team.name}, ${team.email}
+    // That code is inside the for loop. Regardless of how long it is, the loop will run for however many team members I have. Create the same html code for each team members. 
+};
+
+function init() {
+    addManager();
+};
+
+init();
+
+//when the team is finished being built, the html file has to be generated using js.
+//have the html file built out with the appropriate fields.
+
+// 
+
+
