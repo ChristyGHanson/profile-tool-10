@@ -63,28 +63,42 @@ THEN I exit the application, and the HTML is generated `
   
 ## Installation
   
-N/A for now.
-1. How to install step 1 example here
-2. 
+### Using your own code editor to run and edit your version of this program:
+
+1. Fork the repo to your own account.
+2. Clone the forked repo to your machine.
+3. Open the program in the code editor of your choce and open an integrated terminal. Install Node.js with `npm i` using the command line.
+
+Here is how to use the app after Node.js is installed.
+1. Run the program using the integrated terminal. Use the command `node index.js`.
+2. Type answers to each of the prompts and press `Enter` after entering a response.
+3. The HTML page will be updated with information.
+
+### Using the Deployed Program
+1.
+2.
+3.
     
 ## Usage
   
-Here is how to use the app.
-1. step one goes here
-2. Step two
-3. Step three, etc.
+
+
 
 ## License
 
-MIT license is selected for now. 
+TBD
   
 ## Contributing
   
-N/A for now. - This section is where devs can find out how to contribute.
+Contribute by submitting pull requests to the main [repository](https://github.com/ChristyGHanson/profile-tool-10).
   
 ## Tests
   
-Unit tests: List unit tests for each part of the code. This will ensure that it passes all of them. 
+Here are the tests for each part of the code. 
+1. Employee
+2. Engineer
+3. Intern
+4. Manager
 
 ## Questions
   
