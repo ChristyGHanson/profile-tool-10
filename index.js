@@ -11,41 +11,35 @@ let team = [];
 function addManager() {
     inquirer.prompt([
         {
-            // generic name field.
+            // Manager name field.
             type: 'input',
-            message: 'Enter your name: ',
+            message: 'Enter the manager name: ',
             name: 'name'
         },
         {
             //
             type: 'input',
-            message: 'Enter your email address: ',
+            message: 'Email address: ',
             name: 'email'
         },
 
         {
             // 
             type: 'input',
-            message: 'Enter your ID: ',
+            message: 'Enter ID number: ',
             name: 'id'
         },
         {
             //
             type: 'input',
-            message: 'Enter your office number: ',
+            message: 'Enter office number: ',
             name: 'office'
         },
 
         {
-            //
-            type: 'input',
-            message: 'Enter your office number: ',
-            name: 'office'
-        },
-        {
             //engineer or an intern or to finish building my team
             type: 'list',
-            message: 'select an option from the menu: ',
+            message: 'Select an option from the menu for the next teammate: ',
             name: 'menu',
             choices: ['Add engineer', 'Add intern', 'Finish building the team']
         },
@@ -131,7 +125,7 @@ function addIntern() {
             //
             type: 'input',
             message: 'Enter your school: ',
-            name: 'office'
+            name: 'school'
         },
 
         {
