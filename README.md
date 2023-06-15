@@ -1,11 +1,5 @@
 # Team Profile Tool
 
-## License Badge
-
-
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) [Click to view on the web.](https://opensource.org/licenses/MIT) 
-   
-
 ## Table of Contents
 
 * [License Badge](#license-badge)
@@ -30,6 +24,8 @@ SO THAT I have quick access to their emails and GitHub profiles `
 
 ### Acceptance Criteria
 
+
+### to dos
 `GIVEN a command-line application that accepts user input: 
 
 WHEN I am prompted for my team members and their information
@@ -41,29 +37,12 @@ THEN my default email program opens and populates the TO field of the email with
 WHEN I click on the GitHub username
 THEN that GitHub profile opens in a new tab -- only for ENGINEER
 
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-
-
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated `
 
 ### Info for UW Bootcamp Graders
 
 * Click [here](https://github.com/ChristyGHanson/profile-tool-10) to view this repo on GitHub for grading purposes. (Note: This app won't be deployed.)
 * Click [here](url) to view the Google Drive link to the demo video. (Note: Needs to also be submitted in Bootcamp Spot.)
 
-  
-## Installation
   
 ### Using your own code editor to run and edit your version of this program:
 
@@ -81,15 +60,6 @@ Here is how to use the app after Node.js is installed.
 2.
 3.
     
-## Usage
-  
-
-
-
-## License
-
-TBD
-  
 ## Contributing
   
 Contribute by submitting pull requests to the main [repository](https://github.com/ChristyGHanson/profile-tool-10).
