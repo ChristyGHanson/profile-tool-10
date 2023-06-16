@@ -2,6 +2,11 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 // imported function from utils-file.js
 const generateHTML = require('./utils/utils-file.js')
+// Import three lib classes: Manager, Engineer, Intern.
+const Manager = require('./lib/Manager.js');
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
+//do the same thing for manager and intern
 
 // Assign empty array to 'team' variable.
 let team = [];
@@ -48,9 +53,14 @@ function addManager() {
 
         .then((data) => {
             console.log(data)
+            team.push(new Manager(data.name, data.id, data.email, data.officeNumber));
             selectOption(data);
         })
 };
+// use classes from lib folder, and push the classes to the team array.
+// do it with each set of questions.
+// function with loop, loop trhough team array, run generateHTML function for each employee
+// This will create an object for each employee. 
 
 // 'Add engineer' option.
 function addEngineer() {
@@ -94,7 +104,10 @@ function addEngineer() {
 
         .then((data) => {
             console.log(data)
-
+            // go in the order of the class Engineer description pls. 
+            //then work on for loop and generate html. 
+            // this will be in the function at the bottom.
+            team.push(new Engineer(data.name, data.id, data.email, data.github));
             selectOption(data);
         })
 };
@@ -141,6 +154,7 @@ function addIntern() {
 
         .then((data) => {
             console.log(data)
+            team.push(new Intern(data.name, data.id, data.email, data.school));
             selectOption(data);
         })
 };
@@ -169,14 +183,20 @@ function selectOption(data) {
 // make a spot for each team member. 
 //when the team is finished being built, the html file has to be generated using js.
 //have the html file built out with the appropriate fields.
-function finishTeam(data) {
-    console.log('Finish building the team')
-    // Passing argument into the generatePage function. 
-    // team array variable that was built.
-    // team is now the parameter for the utils-file.js
-    const result = generateHTML(data);
-    console.log(result);
-    // Create a 'for' loop. 
+function finishTeam() {
+    // this will be like generateHTML
+    console.log('FINISHED building the team')
+    console.log(team);
+
+    //  Passing argument into the generatePage function. 
+    //   team array variable that was built.
+    //    team is now the parameter for the utils-file.js
+    // const result = generateHTML(); // doctype
+    //    for loop goes here, loops through my array of objects of my team.
+    //     in the loops, generate template literals.
+    //    when looping is done, close it off with the closing body tag, etc.  
+    // console.log(result);
+
     // Write some HTML blocks inside a template literal. Using backticks. 
     // Inside it, access person's name. 
     // Access that information inside array. ${team.name}, ${team.email}
@@ -185,6 +205,8 @@ function finishTeam(data) {
     // Create the same html code for each team members. 
 };
 
+
+// run the app in command line
 function init() {
     addManager();
 };
