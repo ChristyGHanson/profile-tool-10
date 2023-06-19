@@ -22,55 +22,35 @@ This node.js command line application will intake information about a team and g
 I WANT to generate a webpage that displays my team's basic info
 SO THAT I have quick access to their emails and GitHub profiles `
 
-### Acceptance Criteria
-
-
-### to dos
-`GIVEN a command-line application that accepts user input: 
-
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab -- only for ENGINEER
-
-
 ### Info for UW Bootcamp Graders
 
 * Click [here](https://github.com/ChristyGHanson/profile-tool-10) to view this repo on GitHub for grading purposes. (Note: This app won't be deployed.)
-* Click [here](url) to view the Google Drive link to the demo video. (Note: Needs to also be submitted in Bootcamp Spot.)
-
+* Click [here](https://drive.google.com/file/d/1tv1tAxhFa24zTdJJ67NMzYaDN_gWyP8w/view) to view the Google Drive link to the demo video. 
   
 ### Using your own code editor to run and edit your version of this program:
 
-1. Fork the repo to your own account.
-2. Clone the forked repo to your machine.
-3. Open the program in the code editor of your choce and open an integrated terminal. Install Node.js with `npm i` using the command line.
+1. Clone the [repo](https://github.com/ChristyGHanson/profile-tool-10)  to your machine.
+2. Open the program in the code editor of your choce and open an integrated terminal. Install Node.js with `npm i` using the command line.
 
+### Using the Deployed Program
 Here is how to use the app after Node.js is installed.
 1. Run the program using the integrated terminal. Use the command `node index.js`.
 2. Type answers to each of the prompts and press `Enter` after entering a response.
-3. The HTML page will be updated with information.
-
-### Using the Deployed Program
-1.
-2.
-3.
+3. The HTML file `team.html` will be updated with your new profile information that you can open in the browser.
+4. Clicking a GitHub link will load a developer's profile on GitHub.com
+5. Clicking an email link will open a new email in the default email app on your device. 
     
 ## Contributing
   
-Contribute by submitting pull requests to the main [repository](https://github.com/ChristyGHanson/profile-tool-10).
+Contribute by submitting pull requests to the main [repository](https://github.com/ChristyGHanson/profile-tool-10/pulls).
   
 ## Tests
   
-Here are the tests for each part of the code. 
-1. Employee
-2. Engineer
-3. Intern
-4. Manager
+In the VS Code terminal, use the command `npm run test` to run the tests on each of these files in the __tests__ folder.
+1. Employee.test.js
+2. Engineer.test.js
+3. Intern.test.js
+4. Manager.test.js
 
 ## Questions
   

@@ -53,10 +53,6 @@ function addManager() {
             selectOption(data);
         })
 };
-// use classes from lib folder, and push the classes to the team array.
-// do it with each set of questions.
-// function with loop, loop trhough team array, run generateHTML function for each employee
-// This will create an object for each employee. 
 
 // 'Add engineer' option.
 function addEngineer() {
@@ -162,40 +158,17 @@ function selectOption(data) {
     }
 };
 
-// generatehtml inside this function.
-// It needs to output some html to put into the string on 190.
-// div, h3 person's name, biographical info. 
-// loop generates a specific string. 
-// adding person's info to the string. have a long string ready. 
 
 // make a spot for each team member. 
 //when the team is finished being built, the html file has to be generated using js.
 //have the html file built out with the appropriate fields.
 function finishTeam() {
     // this will be like generateHTML
-    console.log('finished!: ' + team);
+    console.log('Finished! Team will appear in the browser.');
     // send the array to the function
     generateHTML(team);
-    // Manager
-    // Engineer
-    // intern
-    //  Passing argument into the generateHTML function. 
-    //   team array variable that was built.
-    //    team is now the parameter for the utils-file.js
-    // const result = generateHTML(); // doctype
-    //    for loop goes here, loops through my array of objects of my team.
-    //     in the loops, generate template literals.
-    //    when looping is done, close it off with the closing body tag, etc.  
-    // console.log(result);
 
-    // Write some HTML blocks inside a template literal. Using backticks. 
-    // Inside it, access person's name. 
-    // Access that information inside array. ${team.name}, ${team.email}
-    // That code is inside the for loop. 
-    // Regardless of how long it is, the loop will run for however many team members I have. 
-    // Create the same html code for each team members. 
 };
-
 
 // run the app in command line
 function init() {

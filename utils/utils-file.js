@@ -1,7 +1,4 @@
 // generate the html here. import it into index.js
-// generate HTML as a template literal.
-// teamdata instead of data as the parameter
-// use functions from utils-file.js
 const fs = require('fs');
 
 function generateHTML(data) {
@@ -20,14 +17,13 @@ function generateHTML(data) {
 
 <body>
     <!-- Header -->
-    <section class="section">
-        <div class="container">
-            <h1 class="title">
-                Profile Tool: Team Roster
+        <section class="section">
+        <div class="container">       
+            <h1 class="title is-2">
+                Profile Tool
             </h1>
-            <p class="subtitle">
-                Build your team <strong>here</strong>!
-            </p>
+            <h2 class="subtitle">
+            Team Roster</h2>
         </div>
     </section>
   `;
@@ -48,34 +44,26 @@ function generateHTML(data) {
 function addEmployee(data) {
   var employeeHtml = `
   <div class="container">
+        <br><h3><strong>Name: ${data.getName()}</strong></h3>`
 
-        <!-- variable needs to be here -->
-        <h3><strong>Name: ${data.getName()}</strong></h3>
-        <br>`
   if (data.getRole() === 'Engineer') {
     // += append
-    employeeHtml += `<strong><a href="https://github.com/${data.getGithub()}" target="_blank">GitHub: ${data.getGithub()}</a></strong>
-    <br>`
+    employeeHtml += `<p><a href="https://github.com/${data.getGithub()}" target="_blank">GitHub: ${data.getGithub()}</a></strong>
+    </p>`
   } else if (data.getRole() === 'Intern') {
-    employeeHtml += `<p><strong>School: ${data.getSchool()}</strong></p>
-    <br>`
+    employeeHtml += `<p>School: ${data.getSchool()}</p>`
   } else {
-    employeeHtml += `<p><strong>Office: ${data.getOfficeNumber()}</strong></p>
-    <br>`
+    employeeHtml += `<p>Office: ${data.getOfficeNumber()}</p>`
   }
 
-  employeeHtml += `<small>Role: ${data.getRole()}</small>
-        <br>
-        <small><a href="mailto:${data.getEmail()}">Email: ${data.getEmail()}</a>
-        </small>
-        <br>
-
+  employeeHtml += `<p>Role: ${data.getRole()}</p>
+        <p><a href="mailto:${data.getEmail()}">Email: ${data.getEmail()}</a></p><br>
     </div>`
 
   return employeeHtml;
 }
 
-// enables exporting for the generatePage function
+// enables exporting for the generateHTML function
 module.exports = generateHTML;
 
 
