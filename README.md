@@ -2,11 +2,9 @@
 
 ## Table of Contents
 
-* [License Badge](#license-badge)
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
-* [License](#license)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
@@ -18,19 +16,22 @@ This node.js command line application will intake information about a team and g
 
 ### User Story
 
-` AS A manager
+AS A manager
 I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles `
+SO THAT I have quick access to their emails and GitHub profiles 
 
 ### Info for UW Bootcamp Graders
 
 * Click [here](https://github.com/ChristyGHanson/profile-tool-10) to view this repo on GitHub for grading purposes. (Note: This app won't be deployed.)
 * Click [here](https://drive.google.com/file/d/1tv1tAxhFa24zTdJJ67NMzYaDN_gWyP8w/view) to view the Google Drive link to the demo video. 
   
+## Installation  
 ### Using your own code editor to run and edit your version of this program:
 
 1. Clone the [repo](https://github.com/ChristyGHanson/profile-tool-10)  to your machine.
 2. Open the program in the code editor of your choce and open an integrated terminal. Install Node.js with `npm i` using the command line.
+
+## Usage
 
 ### Using the Deployed Program
 Here is how to use the app after Node.js is installed.
@@ -47,10 +48,11 @@ Contribute by submitting pull requests to the main [repository](https://github.c
 ## Tests
   
 In the VS Code terminal, use the command `npm run test` to run the tests on each of these files in the __tests__ folder.
-1. Employee.test.js
-2. Engineer.test.js
-3. Intern.test.js
-4. Manager.test.js
+
+* Employee.test.js
+* Engineer.test.js
+* Intern.test.js
+* Manager.test.js
 
 ## Questions
   
