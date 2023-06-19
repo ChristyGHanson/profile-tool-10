@@ -6,11 +6,9 @@ const generateHTML = require('./utils/utils-file.js')
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
-//do the same thing for manager and intern
 
 // Assign empty array to 'team' variable.
 let team = [];
-
 
 // List menu starts with adding a manager's name.
 function addManager() {
@@ -22,20 +20,17 @@ function addManager() {
             name: 'name'
         },
         {
-            //
             type: 'input',
             message: 'Email address: ',
             name: 'email'
         },
 
         {
-            // 
             type: 'input',
             message: 'Enter ID number: ',
             name: 'id'
         },
         {
-            //
             type: 'input',
             message: 'Enter office number: ',
             name: 'office'
@@ -44,7 +39,7 @@ function addManager() {
         {
             // List appears. Add engineer, add intern, or end the prompts by finishing the team.
             type: 'list',
-            message: 'Select an option from the menu for the next teammate: ',
+            message: 'Select an option from the menu: ',
             name: 'menu',
             choices: ['Add engineer', 'Add intern', 'Finish building the team']
         },
@@ -53,7 +48,8 @@ function addManager() {
 
         .then((data) => {
             console.log(data)
-            team.push(new Manager(data.name, data.id, data.email, data.officeNumber));
+            // add data into team array.
+            team.push(new Manager(data.name, data.id, data.email, data.office));
             selectOption(data);
         })
 };
@@ -73,23 +69,20 @@ function addEngineer() {
             name: 'name'
         },
         {
-            //
             type: 'input',
             message: 'Enter their email address: ',
             name: 'email'
         },
 
         {
-            // 
             type: 'input',
             message: 'Enter their ID: ',
             name: 'id'
         },
         {
-            //
             type: 'input',
             message: 'Enter their GitHub username: ',
-            name: 'office'
+            name: 'github'
         },
 
         {
@@ -104,9 +97,7 @@ function addEngineer() {
 
         .then((data) => {
             console.log(data)
-            // go in the order of the class Engineer description pls. 
-            //then work on for loop and generate html. 
-            // this will be in the function at the bottom.
+            // add data into team array.
             team.push(new Engineer(data.name, data.id, data.email, data.github));
             selectOption(data);
         })
@@ -123,27 +114,24 @@ function addIntern() {
             name: 'name'
         },
         {
-            //
             type: 'input',
             message: 'Enter your email address: ',
             name: 'email'
         },
 
         {
-            // 
             type: 'input',
             message: 'Enter your ID: ',
             name: 'id'
         },
         {
-            //
             type: 'input',
             message: 'Enter your school: ',
             name: 'school'
         },
 
         {
-            //engineer or an intern or to finish building my team
+            //engineer or an intern or to finish building team
             type: 'list',
             message: 'select an option from the menu: ',
             name: 'menu',
@@ -154,15 +142,16 @@ function addIntern() {
 
         .then((data) => {
             console.log(data)
+            // add data into team array.
             team.push(new Intern(data.name, data.id, data.email, data.school));
             selectOption(data);
         })
 };
 
 // 'data' parameter sends the above data to this function. selectOption evaluates the data parameter.
-// this function uses the let team =[]; expression
+// this function uses the let team =[]; 
 function selectOption(data) {
-    team.push(data)
+    // team.push(data)
     //put person in the array and view data.
     if (data.menu == 'Add engineer') {
         addEngineer();
@@ -173,22 +162,24 @@ function selectOption(data) {
     }
 };
 
-// generate html inside this function.
-//USE a FOR LOOP.
-// It needs to output some html to put into the string on 189.
-// div, h3 person's name, biographical info. loop generates a specific string. 
+// generatehtml inside this function.
+// It needs to output some html to put into the string on 190.
+// div, h3 person's name, biographical info. 
+// loop generates a specific string. 
 // adding person's info to the string. have a long string ready. 
-//Figure out how it will be set up. we have the data. 
-// focus on the front end. reference Module 10.
+
 // make a spot for each team member. 
 //when the team is finished being built, the html file has to be generated using js.
 //have the html file built out with the appropriate fields.
 function finishTeam() {
     // this will be like generateHTML
-    console.log('FINISHED building the team')
-    console.log(team);
-
-    //  Passing argument into the generatePage function. 
+    console.log('finished!: ' + team);
+    // send the array to the function
+    generateHTML(team);
+    // Manager
+    // Engineer
+    // intern
+    //  Passing argument into the generateHTML function. 
     //   team array variable that was built.
     //    team is now the parameter for the utils-file.js
     // const result = generateHTML(); // doctype

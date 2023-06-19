@@ -1,10 +1,7 @@
-// Employee test
-const Employee = require('../lib/Employee')
+// Employee test ../lib/Employee'
+const Employee = require('../lib/Employee.js')
 
 test('Instantiating employee file', () => {
     const emp = new Employee();
     expect(typeof (emp)).toBe('object');
-    expect(typeof (emp)).toBe();
 });
-
-// test name, email, id, etc. 
